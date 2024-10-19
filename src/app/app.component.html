@@ -25,32 +25,32 @@
   </div>
   <div class="screen">
     <form name="calc">
-      <input type="text" name="text" readonly id="screen" [value]="screenValue">
+      <input type="text" readonly [value]="screenValue | number: '1.0-2'" id="screen">
     </form>
   </div>
-
   <div class="cal-body">
     <div class="btn">
-      <button class="num" (click)="addToScreen('7')">7</button>
-      <button class="num" (click)="addToScreen('8')">8</button>
-      <button class="num" (click)="addToScreen('9')">9</button>
-      <button class="del" (click)="deleteLast()">DEL</button>
-      <button class="num" (click)="addToScreen('4')">4</button>
-      <button class="num" (click)="addToScreen('5')">5</button>
-      <button class="num" (click)="addToScreen('6')">6</button>
-      <button (click)="addToScreen('+')">+</button>
-      <button class="num" (click)="addToScreen('1')">1</button>
-      <button class="num" (click)="addToScreen('2')">2</button>
-      <button class="num" (click)="addToScreen('3')">3</button>
-      <button (click)="addToScreen('-')">-</button>
-      <button (click)="addToScreen('.')">.</button>
-      <button class="num" (click)="addToScreen('0')">0</button>
-      <button (click)="addToScreen('/')">/</button>
-      <button (click)="addToScreen('*')">X</button>
-      <button class="reset" (click)="resetScreen()">RESET</button>
-      <button class="equal" (click)="evaluateExpression()">=</button>
-    </div>
+    <button class="num" (click)="addToScreen('7')">7</button>
+    <button class="num" (click)="addToScreen('8')">8</button>
+    <button class="num" (click)="addToScreen('9')">9</button>
+    <button class="del" (click)="deleteLast()">DEL</button>
+    <button class="num" (click)="addToScreen('4')">4</button>
+    <button class="num" (click)="addToScreen('5')">5</button>
+    <button class="num" (click)="addToScreen('6')">6</button>
+    <button (click)="addToScreen('+')">+</button>
+    <button class="num" (click)="addToScreen('1')">1</button>
+    <button class="num" (click)="addToScreen('2')">2</button>
+    <button class="num" (click)="addToScreen('3')">3</button>
+    <button (click)="addToScreen('-')">-</button>
+    <button (click)="addToScreen('.')">.</button>
+    <button class="num" (click)="addToScreen('0')">0</button>
+    <button (click)="addToScreen('/')">/</button>
+    <button (click)="addToScreen('*')">X</button>
+    <button class="reset" (click)="resetScreen()">RESET</button>
+    <button class="equal" (click)="evaluateExpression()">=</button>
   </div>
+
+</div>
 </div>
 
 <script src="app.component.ts"></script>
