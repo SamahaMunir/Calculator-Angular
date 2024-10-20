@@ -9,20 +9,17 @@ export class CustomNumberFormatPipe implements PipeTransform {
     let num = parseFloat(value);
 
     if (isNaN(num)) {
-      return 'Invalid';  // Handle non-numeric values
+      return '0';  // Handle non-numeric values
     }
 
-    if (num >= 1e6) {
-      return (num / 1e6).toFixed(2) + 'M';  // Format millions
-    } else if (num >= 1e3) {
-      return (num / 1e3).toFixed(2) + 'K';  // Format thousands
-    }
-
-    // For smaller numbers
+    // Use `toLocaleString` to format numbers with commas and fixed decimal places
     if (Number.isInteger(num)) {
-      return num.toString();  // Return integer without decimals
+      return num.toLocaleString();  // Format integers with commas
     } else {
-      return num.toFixed(2).replace(/\.00$/, '');  // Format to 2 decimal places and remove unnecessary ".00"
+      return num.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 50 });
     }
   }
+}
+
+export class NumberFormatPipe {
 }
